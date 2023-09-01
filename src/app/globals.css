@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  @apply m-0 p-0 font-[REM];
+}
+
+*::-webkit-scrollbar {
+  @apply w-0 p-0 m-0 box-border;
+}
+.app {
+  @apply relative bg-zinc-100;
+}
+.logo {
+  font-family: "REM";
+  background-image: linear-gradient(to top left, #fff, #000);
+  @apply text-2xl font-semibold cursor-pointer mr-7 text-transparent bg-clip-text;
+}
+.logo span {
+  @apply text-3xl font-thin italic;
+}
+.NavBar {
+  @apply flex justify-between py-1 px-4 text-xl text-zinc-600 bg-gray-300 bg-opacity-70 items-center mb-3 scale-y-90 md:scale-y-100;
+}
+.SideBar {
+  @apply fixed items-center flex flex-col gap-2  min-w-[40vw] h-[100vh] top-0  left-0 overflow-y-scroll bg-white bg-opacity-75 text-xl max-w-[500px] py-3 px-4 z-40;
+}
+.SearchBar {
+  @apply flex items-center justify-between bg-white  text-2xl rounded-full pl-3 py-1 w-full min-w-[200px] max-w-[60vw];
+}
+
+.genre {
+  @apply py-1 rounded-sm bg-white font-semibold text-zinc-600 hover:text-white hover:bg-zinc-900 cursor-pointer;
+}
+.selectedgenre {
+  @apply px-2 py-1 rounded-sm bg-zinc-900 font-semibold text-white cursor-pointer;
+}
+
+.icon {
+  @apply hover:bg-white rounded-sm text-4xl p-1 hover:shadow-sm hover:shadow-black shadow cursor-pointer;
+}
+.CustomButton {
+  @apply bg-gray-300 text-zinc-700 hover:text-white hover:bg-black;
+}
+.loading {
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  @apply bg-gray-300 border;
+}
+@keyframes loading {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.scroll_view {
+  @apply flex items-center justify-start md:gap-2 overflow-x-scroll mt-2 w-full pl-3;
+}
+.studio {
+  @apply min-w-[120px] max-w-[120px] md:min-w-[150px] md:max-w-[150px] h-[120px] md:h-[150px] rounded-full mx-0.5;
+}
+.more_btn {
+  @apply text-blue-400 cursor-pointer font-serif;
+}
+
+.footer {
+  @apply bg-gray-400 py-3 px-4 mt-5 w-full;
+}
+
+.footer_links {
+  @apply text-lg md:text-xl text-black flex flex-wrap gap-5 mt-5 justify-center w-full;
+}
+.footer_links_container {
+  @apply rounded-md font-serif  mx-10 flex flex-col gap-1 items-center justify-start py-2;
+}
+.footer_title {
+  @apply font-normal text-gray-600;
+}
+.footer_link {
+  background-image: linear-gradient(to top, #fff, #000);
+  @apply font-light hover:text-transparent bg-clip-text cursor-pointer;
+}
+.copyrights {
+  @apply font-thin font-[REM] scale-y-90 flex gap-0  flex-col md:flex-row items-start md:gap-3 text-lg w-full;
+}
+.container {
+  @apply flex flex-col items-start justify-start relative rounded-lg overflow-hidden m-1 bg-opacity-60 min-w-[150px] max-w-[150px] md:min-w-[200px] md:max-w-[200px] h-[200px] md:h-[250px] bg-black;
+}
+img {
+  @apply w-full h-full object-fill;
+}
+.contant_headings {
+  @apply text-white w-full px-2 py-1 flex flex-col justify-start h-[30%] md:h-[25%] items-center gap-1 md:gap-0;
+}
+.title {
+  @apply font-semibold text-xs md:text-sm overflow-x-hidden w-full font-serif text-ellipsis whitespace-nowrap;
+}
+
+.heading_2 {
+  @apply text-xs md:text-sm font-serif font-bold;
+}
+.heading_3 {
+  @apply text-xs md:text-sm font-semibold py-0 px-2 text-white;
+}
+.rating {
+  animation-name: slide_down;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  @apply absolute top-2 right-2 text-transparent rounded-full;
+}
+.favorite {
+  color: #84bdc2;
+  animation-name: slide_down;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  @apply absolute top-2 left-2 cursor-pointer rounded-full;
+}
+@keyframes slide_down {
+  0% {
+    transform: translateY(-300px);
+  }
+  50% {
+    transform: translateY(0);
+    scale: 0.5;
+  }
+  70% {
+    transform: translateY(0);
+    scale: 1.2;
+  }
+  100% {
+    transform: translateY(0);
+    scale: 1.2;
+  }
+}
+.pages {
+  @apply w-full flex justify-center items-center py-1 gap-3 bg-black bg-opacity-75;
+}
+.page {
+  @apply p-1 rounded-full text-lg font-serif  font-semibold text-zinc-800 bg-white flex justify-center items-center  hover:bg-zinc-950 hover:text-white cursor-pointer  w-10 h-10;
+}
+.selectedpage {
+  @apply bg-black text-white rounded-full  text-lg font-serif font-semibold  flex justify-center my-1 items-center w-10 h-10;
+}
+
+.menu_item {
+  @apply px-2 py-1 rounded-md bg-white font-semibold text-zinc-600 hover:text-white hover:bg-zinc-900 cursor-pointer font-mono;
+}
+input {
+  padding: 5px;
+  color: #84bdc2;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}
+.favoritePages {
+  @apply flex justify-evenly items-center gap-10 w-full bg-black bg-opacity-60 text-white font-semibold text-lg;
+}
